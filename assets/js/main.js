@@ -1,5 +1,32 @@
 // industrial.undersoft — script principal
 
+const lightbox = document.querySelector('#lightbox');
+const lightboxImage = lightbox?.querySelector('.lightbox-image');
+const lightboxClose = lightbox?.querySelector('.lightbox-close');
+
+document.querySelectorAll('.gallery-item img').forEach((image) => {
+  image.closest('.gallery-item').addEventListener('click', () => {
+    lightboxImage.src = image.src;
+    lightboxImage.alt = image.alt;
+    lightbox.showModal();
+  });
+});
+
+lightboxClose?.addEventListener('click', () => {
+  lightbox.close();
+});
+
+lightbox?.addEventListener('click', (event) => {
+  if (event.target === lightbox) {
+    lightbox.close();
+  }
+});
+
+lightbox?.addEventListener('close', () => {
+  lightboxImage.src = '';
+  lightboxImage.alt = '';
+});
+
 /* Substitua somente os valores abaixo antes da publicação comercial. */
 const SITE_CONFIG = {
   marketplaceUrl: 'https://lista.mercadolivre.com.br/_CustId_1618539763?item_id=MLB4008885831&category_id=MLB22714&seller_id=1618539763&client=recoview-selleritems&recos_listing=true#origin=pdp&component=seller&typeSeller=classic',
