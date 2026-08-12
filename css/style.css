@@ -1,0 +1,12 @@
+/* industrial.undersoft — folha de estilos base
+   Tokens de design (cor, tipografia) pendentes de definição. */
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+body {
+  font-family: system-ui, sans-serif;
+}
