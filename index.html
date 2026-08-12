@@ -1,15 +1,553 @@
-<!DOCTYPE html>
-<html lang="pt-PT">
+<!doctype html>
+<html lang="pt-BR">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <title>industrial.undersoft</title>
-  <link rel="stylesheet" href="assets/css/style.css">
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Plaquetas de Identificação em Inox para Máquinas e Equipamentos</title>
+  <meta name="description" content="Plaquetas de identificação em inox personalizadas para máquinas, equipamentos, patrimônio, número de série, QR Code e informações técnicas. Entre em contato.">
+  <meta name="robots" content="index,follow,max-image-preview:large">
+  <meta name="google-site-verification" content="GOOGLE_SITE_VERIFICATION">
+  <link rel="canonical" href="SITE_CANONICAL_URL">
+  <meta property="og:type" content="website">
+  <meta property="og:title" content="Plaquetas de Identificação em Inox para Máquinas e Equipamentos">
+  <meta property="og:description" content="Identificação profissional para máquinas, equipamentos e patrimônio.">
+  <meta property="og:image" content="SITE_CANONICAL_URL/assets/img/og-plaquetas.jpg">
+  <meta property="og:url" content="SITE_CANONICAL_URL">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Plaquetas de Identificação em Inox">
+  <meta name="twitter:description" content="Plaquetas personalizadas para identificação industrial e patrimônio.">
+  <meta name="twitter:image" content="SITE_CANONICAL_URL/assets/img/og-plaquetas.jpg">
+  <style>
+:root {
+  --orange: #ff4b16;
+  --orange-dark: #d93605;
+  --ink: #101315;
+  --graphite: #1b1f22;
+  --muted: #62696d;
+  --line: #dfe1df;
+  --soft: #f3f1ed;
+  --white: #fff;
+  --radius: 24px;
+  --shadow: 0 20px 60px rgba(10, 12, 14, .12);
+}
+
+* { box-sizing: border-box; }
+html { scroll-behavior: smooth; scroll-padding-top: 90px; }
+body {
+  margin: 0;
+  color: var(--ink);
+  background: var(--white);
+  font-family: Inter, Arial, Helvetica, sans-serif;
+  line-height: 1.55;
+  -webkit-font-smoothing: antialiased;
+}
+a { color: inherit; text-decoration: none; }
+button, a { touch-action: manipulation; }
+h1, h2, h3, p { margin-top: 0; }
+h1, h2, h3 { line-height: 1.03; letter-spacing: -.045em; }
+h1 { max-width: 1000px; margin-bottom: 25px; font-size: clamp(2.6rem, 7vw, 5.9rem); }
+h2 { margin-bottom: 22px; font-size: clamp(2.15rem, 5vw, 4.5rem); }
+h3 { font-size: 1.35rem; }
+.container { width: min(1180px, calc(100% - 40px)); margin-inline: auto; }
+.skip-link { position: fixed; top: -80px; left: 15px; z-index: 100; padding: 12px 18px; color: #fff; background: var(--ink); }
+.skip-link:focus { top: 15px; }
+.sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0, 0, 0, 0); white-space: nowrap; border: 0; }
+
+.site-header {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: rgba(255, 255, 255, .93);
+  backdrop-filter: blur(16px);
+  border-bottom: 1px solid rgba(17, 20, 22, .08);
+}
+.nav-wrap { min-height: 76px; display: flex; align-items: center; justify-content: space-between; }
+.brand { position: relative; display: inline-flex; align-items: baseline; letter-spacing: -.07em; font-size: 1.5rem; }
+.brand span { font-weight: 900; }
+.brand b { font-size: 1.3rem; font-weight: 400; }
+.brand small { position: absolute; top: 28px; left: 1px; color: var(--orange); font-size: .53rem; letter-spacing: .13em; text-transform: uppercase; white-space: nowrap; }
+.site-header nav { display: flex; align-items: center; gap: 25px; font-size: .88rem; font-weight: 650; }
+.nav-cta { padding: 11px 17px; color: #fff; background: var(--ink); border-radius: 999px; }
+.menu-toggle { display: none; padding: 12px; background: transparent; border: 0; }
+.menu-toggle span { display: block; width: 24px; height: 2px; margin: 5px; background: var(--ink); }
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  padding: 78px 0 85px;
+  background: radial-gradient(circle at 85% 20%, rgba(255, 75, 22, .22), transparent 37%), linear-gradient(120deg, #fff 0%, #f7eee8 100%);
+}
+.hero::before { content: ""; position: absolute; top: -100px; right: -100px; width: 360px; height: 360px; border: 1px solid rgba(255, 75, 22, .35); border-radius: 50%; }
+.hero-grid { display: grid; grid-template-columns: 1.08fr .92fr; gap: 58px; align-items: center; }
+.eyebrow, .kicker { color: var(--orange-dark); font-size: .74rem; font-weight: 750; letter-spacing: .12em; text-transform: uppercase; }
+.eyebrow { display: inline-flex; align-items: center; gap: 10px; padding: 9px 15px; border: 1px solid rgba(255, 75, 22, .35); border-radius: 99px; }
+.eyebrow i { width: 7px; height: 7px; background: var(--orange); border-radius: 50%; }
+.lead, .large { max-width: 680px; color: #3e4549; font-size: clamp(1.08rem, 2vw, 1.35rem); }
+.representation { max-width: 680px; margin: 22px 0 0; padding-left: 16px; color: #3e4549; font-size: .93rem; border-left: 3px solid var(--orange); }
+.actions { display: flex; flex-wrap: wrap; gap: 12px; margin-top: 30px; }
+.button {
+  min-height: 54px;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 15px;
+  padding: 14px 22px;
+  font-weight: 750;
+  border: 1px solid var(--ink);
+  border-radius: 14px;
+  transition: .2s;
+}
+.button:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(17, 20, 22, .14); }
+.button:focus-visible, a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px solid #ff9c7d; outline-offset: 3px; }
+.button.primary { color: #fff; background: var(--orange); border-color: var(--orange); }
+.button.secondary { background: rgba(255, 255, 255, .72); }
+.text-link { display: inline-block; margin-top: 20px; font-size: .9rem; font-weight: 650; border-bottom: 1px solid; }
+
+.photo-slot {
+  min-height: 260px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  color: #6f7679;
+  text-align: center;
+  background: repeating-linear-gradient(135deg, #f6f6f4, #f6f6f4 10px, #ededeb 10px, #ededeb 20px);
+  border: 1px dashed #99a0a3;
+  border-radius: var(--radius);
+}
+.photo-slot span { font-size: .75rem; font-weight: 800; letter-spacing: .16em; }
+.photo-slot small { margin-top: 10px; font-family: monospace; }
+.hero-photo { min-height: 545px; border-color: rgba(255, 75, 22, .48); box-shadow: var(--shadow); }
+
+.section { padding: 105px 0; }
+.section-head { max-width: 760px; margin-bottom: 50px; }
+.section-head > p:last-child { color: var(--muted); font-size: 1.1rem; }
+.section-head.row { max-width: none; display: grid; grid-template-columns: 1fr .6fr; align-items: end; gap: 40px; }
+.card-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 14px; }
+.card-grid article { min-height: 215px; padding: 28px; background: #fff; border: 1px solid var(--line); border-radius: 18px; transition: .2s; }
+.card-grid article:hover { border-color: var(--orange); transform: translateY(-4px); }
+.card-grid article > b { display: block; margin-bottom: 45px; color: var(--orange); font-size: .76rem; }
+.card-grid article p { margin: 0; color: var(--muted); }
+.dark { color: #fff; background: var(--graphite); }
+.dark .large { color: #bbc0c2; }
+.split { display: grid; grid-template-columns: 1fr 1fr; gap: 80px; align-items: center; }
+.spec-list { padding: 0; margin: 0; list-style: none; border-top: 1px solid #444a4d; }
+.spec-list li { padding: 19px 0; font-size: 1.08rem; border-bottom: 1px solid #444a4d; }
+.spec-list span { width: 48px; display: inline-block; color: var(--orange); font-size: .75rem; }
+
+.gallery { display: grid; grid-template-columns: 1.5fr 1fr; grid-template-rows: 1fr 1fr; gap: 15px; }
+.gallery .featured { grid-row: 1 / 3; min-height: 570px; }
+.soft { background: var(--soft); }
+.example-wrap { align-items: center; }
+.note { margin-top: 30px; color: var(--muted); font-size: .78rem; }
+.nameplate {
+  position: relative;
+  padding: 52px 60px;
+  color: #171a1c;
+  background: linear-gradient(100deg, #babdbd, #f7f7f4 26%, #bfc2c2 48%, #f4f4f0 70%, #aeb2b3);
+  border: 1px solid #85898a;
+  border-radius: 12px;
+  box-shadow: 0 25px 60px rgba(0, 0, 0, .2), inset 0 1px 2px #fff;
+  text-shadow: 0 1px rgba(255, 255, 255, .7);
+}
+.nameplate strong { letter-spacing: .15em; }
+.plate-grid { display: grid; grid-template-columns: 1fr 105px; gap: 20px; align-items: center; margin-top: 20px; }
+.plate-grid p { margin: 0; font-family: monospace; line-height: 1.9; }
+.fake-qr { width: 100px; aspect-ratio: 1; background: conic-gradient(from 90deg, #1b1d1f 25%, #eee 0 50%, #1b1d1f 0 75%, #eee 0); background-size: 20px 20px; border: 8px solid #eee; outline: 3px solid #1b1d1f; }
+.plate-screw { position: absolute; width: 13px; height: 13px; background: radial-gradient(circle, #333 15%, #777 18%, #d4d4d1 55%, #555 58%); border-radius: 50%; }
+.plate-screw.a { top: 18px; left: 18px; }
+.plate-screw.b { top: 18px; right: 18px; }
+.plate-screw.c { bottom: 18px; left: 18px; }
+.plate-screw.d { right: 18px; bottom: 18px; }
+
+.steps { display: grid; grid-template-columns: repeat(4, 1fr); gap: 0; padding: 0; list-style: none; }
+.steps li { padding: 28px 25px; border-top: 2px solid var(--ink); }
+.steps li:first-child { border-color: var(--orange); }
+.steps span { color: var(--orange); font-size: .78rem; font-weight: 800; }
+.steps h3 { margin-top: 45px; }
+.steps p { color: var(--muted); font-size: .9rem; }
+.quantity { color: #fff; background: var(--orange); }
+.quantity .kicker, .quantity .large { color: #fff; }
+.button.light { color: var(--ink); background: #fff; border-color: #fff; }
+.compact { grid-template-columns: 1.3fr .7fr; }
+.faq-layout { display: grid; grid-template-columns: .65fr 1.35fr; gap: 80px; }
+.accordion details { border-top: 1px solid var(--line); }
+.accordion details:last-child { border-bottom: 1px solid var(--line); }
+summary { position: relative; padding: 23px 40px 23px 0; font-weight: 750; list-style: none; cursor: pointer; }
+summary::-webkit-details-marker { display: none; }
+summary::after { content: "+"; position: absolute; top: 16px; right: 5px; color: var(--orange); font-size: 1.5rem; }
+.accordion details[open] summary::after { content: "−"; }
+.accordion details p { padding: 0 45px 22px 0; color: var(--muted); }
+
+.final-cta { padding: 120px 0; color: #fff; background: radial-gradient(circle at 20% 0, rgba(255, 75, 22, .24), transparent 38%), #111416; }
+.final-cta p:not(.kicker) { color: #c4c8c9; font-size: 1.08rem; }
+.center { justify-content: center; }
+.lead-grid { display: grid; grid-template-columns: .85fr 1.15fr; gap: 80px; align-items: start; }
+.lead-copy { position: sticky; top: 120px; }
+.lead-copy .actions { margin-bottom: 22px; }
+.direct-email { display: inline-block; color: #fff; font-weight: 700; border-bottom: 1px solid rgba(255, 255, 255, .4); }
+.lead-form { display: grid; gap: 18px; padding: 34px; color: var(--ink); background: #fff; border-radius: var(--radius); box-shadow: 0 24px 70px rgba(0, 0, 0, .3); }
+.form-field { display: grid; gap: 7px; }
+.form-field label { font-size: .8rem; font-weight: 800; letter-spacing: .05em; text-transform: uppercase; }
+.form-field input, .form-field textarea {
+  width: 100%;
+  padding: 15px 16px;
+  color: var(--ink);
+  font: inherit;
+  background: #f5f4f1;
+  border: 1px solid #d9dbd9;
+  border-radius: 10px;
+  outline: none;
+  transition: .2s;
+}
+.form-field textarea { min-height: 145px; resize: vertical; }
+.form-field input:focus, .form-field textarea:focus { background: #fff; border-color: var(--orange); box-shadow: 0 0 0 3px rgba(255, 75, 22, .14); }
+.privacy-check { display: grid; grid-template-columns: 20px 1fr; gap: 10px; align-items: start; color: var(--muted); font-size: .78rem; line-height: 1.45; }
+.privacy-check input { width: 17px; height: 17px; margin: 2px 0 0; accent-color: var(--orange); }
+.privacy-check a { color: var(--ink); text-decoration: underline; }
+.form-submit { width: 100%; border: 0; cursor: pointer; }
+.form-note { margin: -4px 0 0 !important; color: var(--muted) !important; font-size: .72rem !important; text-align: center; }
+.honey { position: absolute !important; left: -9999px !important; opacity: 0 !important; pointer-events: none !important; }
+footer { padding: 70px 0 25px; color: #fff; background: #090b0c; }
+.footer-grid { display: grid; grid-template-columns: 1.5fr 1fr 1fr; gap: 60px; }
+.footer-grid > div { display: flex; flex-direction: column; gap: 9px; }
+.footer-grid strong { margin-bottom: 8px; }
+.footer-grid a, .footer-grid span { color: #aeb3b5; font-size: .9rem; }
+.inverse small { color: var(--orange); }
+.copyright { display: flex; justify-content: space-between; margin-top: 60px; padding-top: 20px; color: #73797c; font-size: .78rem; border-top: 1px solid #282c2e; }
+
+@media (max-width: 900px) {
+  .site-header nav { position: absolute; top: 76px; right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; padding: 20px; background: #fff; border-bottom: 1px solid var(--line); }
+  .site-header nav.open { display: flex; }
+  .menu-toggle { display: block; }
+  .hero-grid, .split, .faq-layout, .lead-grid { grid-template-columns: 1fr; }
+  .hero-grid { gap: 40px; }
+  .hero-photo { min-height: 360px; }
+  .card-grid { grid-template-columns: repeat(2, 1fr); }
+  .section-head.row { grid-template-columns: 1fr; }
+  .steps { grid-template-columns: repeat(2, 1fr); }
+  .gallery .featured { min-height: 420px; }
+  .compact { gap: 35px; }
+  .lead-copy { position: static; }
+}
+
+@media (max-width: 600px) {
+  .container { width: min(calc(100% - 28px), 1180px); }
+  h1 { font-size: 2.55rem; }
+  .hero { padding: 50px 0 60px; }
+  .section { padding: 75px 0; }
+  .card-grid { grid-template-columns: 1fr; }
+  .card-grid article { min-height: 175px; }
+  .card-grid article > b { margin-bottom: 25px; }
+  .gallery { grid-template-columns: 1fr; grid-template-rows: auto; }
+  .gallery .featured { grid-row: auto; min-height: 330px; }
+  .gallery .photo-slot { min-height: 230px; }
+  .steps { grid-template-columns: 1fr; }
+  .steps h3 { margin-top: 25px; }
+  .section-head { margin-bottom: 35px; }
+  .split, .faq-layout { gap: 45px; }
+  .nameplate { padding: 45px 35px; }
+  .plate-grid { grid-template-columns: 1fr 75px; }
+  .fake-qr { width: 70px; }
+  .footer-grid { grid-template-columns: 1fr; gap: 35px; }
+  .copyright { flex-direction: column; gap: 8px; }
+  .actions .button, .quantity .button { width: 100%; }
+  .lead-form { padding: 24px 18px; }
+  .hero-photo { min-height: 310px; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  html { scroll-behavior: auto; }
+  *, *::before, *::after { transition-duration: .01ms !important; }
+}
+
+</style>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"Service","name":"Plaquetas de identificação em inox personalizadas","description":"Produção personalizada de plaquetas de identificação para máquinas, equipamentos e patrimônio.","provider":{"@type":"Organization","name":"Undersoft","email":"contato@undersoft.tec.br","address":{"@type":"PostalAddress","addressLocality":"Timóteo","addressRegion":"MG","addressCountry":"BR"},"url":"SITE_CANONICAL_URL"},"serviceType":"Identificação industrial personalizada"}
+  </script>
+  <script type="application/ld+json">
+    {"@context":"https://schema.org","@type":"FAQPage","mainEntity":[{"@type":"Question","name":"É possível fabricar plaquetas em medidas personalizadas?","acceptedAnswer":{"@type":"Answer","text":"Sim. As medidas são definidas conforme a necessidade informada no projeto."}},{"@type":"Question","name":"Posso colocar o logotipo da minha empresa?","acceptedAnswer":{"@type":"Answer","text":"Sim. Envie o arquivo do logotipo junto com as demais informações para avaliação do layout."}},{"@type":"Question","name":"É possível utilizar numeração sequencial?","acceptedAnswer":{"@type":"Answer","text":"Sim. A numeração sequencial pode ser incluída conforme a relação de dados enviada."}},{"@type":"Question","name":"Posso incluir QR Code?","acceptedAnswer":{"@type":"Answer","text":"Sim. Envie o conteúdo ou endereço que deverá ser associado ao QR Code."}},{"@type":"Question","name":"Vocês produzem plaquetas para máquinas e equipamentos?","acceptedAnswer":{"@type":"Answer","text":"Sim. A página é dedicada a plaquetas em inox para máquinas, equipamentos, painéis e patrimônio."}},{"@type":"Question","name":"É possível solicitar várias unidades?","acceptedAnswer":{"@type":"Answer","text":"Sim. Informe a quantidade aproximada no formulário de contato."}},{"@type":"Question","name":"Como envio os dados que devem constar na plaqueta?","acceptedAnswer":{"@type":"Answer","text":"Os dados podem ser enviados pelo formulário ou diretamente por email."}},{"@type":"Question","name":"Vocês enviam para outras regiões do Brasil?","acceptedAnswer":{"@type":"Answer","text":"A disponibilidade e as condições de envio devem ser confirmadas durante o atendimento."}}]}
+  </script>
 </head>
 <body>
+  <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
+  <header class="site-header">
+    <div class="container nav-wrap">
+      <a class="brand" href="#inicio" aria-label="Undersoft Industrial — início">
+        <span>UNDER</span><b>soft</b><small>Soluções Empresariais</small>
+      </a>
+      <button class="menu-toggle" type="button" aria-expanded="false" aria-controls="menu">
+        <span></span><span></span><span></span><i class="sr-only">Abrir menu</i>
+      </button>
+      <nav id="menu" aria-label="Navegação principal">
+        <a href="#aplicacoes">Aplicações</a>
+        <a href="#personalizacao">Personalização</a>
+        <a href="#exemplos">Exemplos</a>
+        <a href="#processo">Como funciona</a>
+        <a href="#faq">FAQ</a>
+        <a class="nav-cta js-contact" href="#contato">Entre em contato</a>
+      </nav>
+    </div>
+  </header>
 
-  <!-- Conteúdo pendente: identidade visual e foco do site ainda por definir -->
+  <main id="conteudo">
+    <section class="hero" id="inicio">
+      <div class="container hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow"><i></i> Identificação industrial personalizada</p>
+          <h1>Plaquetas de Identificação em Inox para Máquinas e Equipamentos</h1>
+          <p class="lead">Plaquetas personalizadas para identificação industrial, patrimônio, número de série, QR Code e informações técnicas.</p>
+          <p class="representation">A Undersoft é representante oficial da <strong>WorldInox</strong>, que corresponde à <strong>PLACAS_AUTO</strong> no Mercado Livre.</p>
+          <div class="actions">
+            <a class="button primary js-contact" href="#contato">Entre em contato <span>↗</span></a>
+            <a class="button secondary js-email" href="mailto:contato@undersoft.tec.br">Enviar email</a>
+          </div>
+          <a class="text-link js-marketplace" href="https://lista.mercadolivre.com.br/_CustId_1618539763?item_id=MLB4008885831&amp;category_id=MLB22714&amp;seller_id=1618539763&amp;client=recoview-selleritems&amp;recos_listing=true#origin=pdp&amp;component=seller&amp;typeSeller=classic">Ver produtos disponíveis →</a>
+        </div>
+        <div class="photo-slot hero-photo" role="img" aria-label="Espaço reservado para fotografia de plaquetas de identificação em inox">
+          <span>FOTOGRAFIA DO PRODUTO</span>
+          <small>assets/img/hero-plaquetas.webp</small>
+        </div>
+      </div>
+    </section>
 
-  <script src="assets/js/main.js"></script>
+    <section class="section" id="aplicacoes">
+      <div class="container">
+        <div class="section-head">
+          <p class="kicker">Aplicações</p>
+          <h2>Identificação para diferentes aplicações</h2>
+          <p>Informações organizadas e legíveis no equipamento, peça ou patrimônio que precisa ser identificado.</p>
+        </div>
+        <div class="card-grid applications">
+          <article><b>01</b><h3>Máquinas industriais</h3><p>Modelo, série e informações técnicas.</p></article>
+          <article><b>02</b><h3>Equipamentos</h3><p>Identificação operacional ou interna.</p></article>
+          <article><b>03</b><h3>Patrimônio</h3><p>Controle e numeração de ativos.</p></article>
+          <article><b>04</b><h3>Quadros elétricos</h3><p>Dados do painel e comandos.</p></article>
+          <article><b>05</b><h3>QR Code e código de barras</h3><p>Acesso a dados e rastreabilidade.</p></article>
+          <article><b>06</b><h3>Fabricantes e manutenção</h3><p>Identificação empresarial personalizada.</p></article>
+        </div>
+      </div>
+    </section>
+
+    <section class="section dark" id="personalizacao">
+      <div class="container split">
+        <div>
+          <p class="kicker">Sob medida</p>
+          <h2>Produzida de acordo com a sua necessidade</h2>
+          <p class="large">A plaqueta não precisa seguir um modelo fechado. Envie as informações do projeto e defina o conteúdo necessário para a sua aplicação.</p>
+          <a class="button primary js-contact" href="#contato">Enviar especificações <span>↗</span></a>
+        </div>
+        <ul class="spec-list">
+          <li><span>01</span> Texto e dados técnicos</li>
+          <li><span>02</span> Logotipo</li>
+          <li><span>03</span> Numeração sequencial</li>
+          <li><span>04</span> QR Code ou código de barras</li>
+          <li><span>05</span> Medidas e quantidade</li>
+          <li><span>06</span> Furos para fixação</li>
+        </ul>
+      </div>
+    </section>
+
+    <section class="section" id="exemplos">
+      <div class="container">
+        <div class="section-head row">
+          <div><p class="kicker">Exemplos reais</p><h2>Veja detalhes do produto</h2></div>
+          <p>Os espaços abaixo receberão fotografias reais, sem marcas de terceiros em destaque nem dados identificadores.</p>
+        </div>
+        <div class="gallery">
+          <div class="photo-slot featured" role="img" aria-label="Espaço para fotografia frontal de plaqueta em inox"><span>FOTO PRINCIPAL</span><small>assets/img/galeria-01.webp</small></div>
+          <div class="photo-slot" role="img" aria-label="Espaço para fotografia de detalhe da gravação"><span>DETALHE</span><small>assets/img/galeria-02.webp</small></div>
+          <div class="photo-slot" role="img" aria-label="Espaço para fotografia de plaquetas em quantidade"><span>QUANTIDADE</span><small>assets/img/galeria-03.webp</small></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section soft">
+      <div class="container split example-wrap">
+        <div>
+          <p class="kicker">Conteúdo variável</p>
+          <h2>As informações certas para cada aplicação</h2>
+          <p class="large">Organize dados técnicos, identificação patrimonial ou referências digitais numa única plaqueta.</p>
+          <p class="note">Exemplo meramente ilustrativo. Todos os dados apresentados são fictícios.</p>
+        </div>
+        <div class="nameplate" aria-label="Exemplo fictício de uma plaqueta de identificação">
+          <i class="plate-screw a"></i><i class="plate-screw b"></i><i class="plate-screw c"></i><i class="plate-screw d"></i>
+          <strong>FABRICANTE</strong>
+          <div class="plate-grid">
+            <p>MODELO <b>XP-450</b><br>SÉRIE <b>000245</b><br>TENSÃO <b>220 V</b><br>PATRIMÔNIO <b>EQ-0254</b></p>
+            <div class="fake-qr" aria-label="Representação gráfica de QR Code fictício"></div>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <section class="section" id="processo">
+      <div class="container">
+        <div class="section-head"><p class="kicker">Processo</p><h2>Como funciona</h2></div>
+        <ol class="steps">
+          <li><span>01</span><h3>Envie as informações</h3><p>Texto, medidas, quantidade, logotipo e dados da plaqueta.</p></li>
+          <li><span>02</span><h3>Definição do projeto</h3><p>São verificadas dimensões, layout e informações necessárias.</p></li>
+          <li><span>03</span><h3>Produção</h3><p>A plaqueta é produzida conforme o projeto aprovado.</p></li>
+          <li><span>04</span><h3>Envio</h3><p>O produto é enviado para o cliente nas condições acordadas.</p></li>
+        </ol>
+      </div>
+    </section>
+
+    <section class="section quantity">
+      <div class="container split">
+        <div><p class="kicker">Atendimento B2B</p><h2>Precisa de várias unidades?</h2><p class="large">Produção personalizada para empresas que precisam identificar máquinas, equipamentos ou patrimônio em pequenas ou grandes quantidades.</p></div>
+        <a class="button light js-contact" href="#contato">Entre em contato <span>↗</span></a>
+      </div>
+    </section>
+
+    <section class="section marketplace">
+      <div class="container split compact">
+        <div><p class="kicker">Compra direta</p><h2>Prefere comprar pelo Mercado Livre?</h2><p>Alguns modelos podem ser adquiridos diretamente pela <strong>PLACAS_AUTO</strong>, loja da WorldInox no Mercado Livre.</p></div>
+        <a class="button secondary js-marketplace" href="https://lista.mercadolivre.com.br/_CustId_1618539763?item_id=MLB4008885831&amp;category_id=MLB22714&amp;seller_id=1618539763&amp;client=recoview-selleritems&amp;recos_listing=true#origin=pdp&amp;component=seller&amp;typeSeller=classic">Ver produtos no Mercado Livre</a>
+      </div>
+    </section>
+
+    <section class="section" id="faq">
+      <div class="container faq-layout">
+        <div><p class="kicker">Dúvidas frequentes</p><h2>Informações antes de solicitar</h2></div>
+        <div class="accordion">
+          <details><summary>É possível fabricar plaquetas em medidas personalizadas?</summary><p>Sim. As medidas são definidas conforme a necessidade informada no projeto.</p></details>
+          <details><summary>Posso colocar o logotipo da minha empresa?</summary><p>Sim. Envie o arquivo do logotipo junto com as demais informações para avaliação do layout.</p></details>
+          <details><summary>É possível utilizar numeração sequencial?</summary><p>Sim. A numeração sequencial pode ser incluída conforme a relação de dados enviada.</p></details>
+          <details><summary>Posso incluir QR Code?</summary><p>Sim. Envie o conteúdo ou endereço que deverá ser associado ao QR Code.</p></details>
+          <details><summary>Vocês produzem plaquetas para máquinas e equipamentos?</summary><p>Sim. A página é dedicada a plaquetas em inox para máquinas, equipamentos, painéis e patrimônio.</p></details>
+          <details><summary>É possível solicitar várias unidades?</summary><p>Sim. Informe a quantidade aproximada no formulário de contato.</p></details>
+          <details><summary>Como envio os dados da plaqueta?</summary><p>Os dados podem ser enviados pelo formulário ou diretamente por email.</p></details>
+          <details><summary>Vocês enviam para outras regiões do Brasil?</summary><p>A disponibilidade e as condições de envio devem ser confirmadas durante o atendimento.</p></details>
+        </div>
+      </div>
+    </section>
+
+    <section class="final-cta" id="contato">
+      <div class="container lead-grid">
+        <div class="lead-copy">
+          <p class="kicker">Solicite uma análise</p>
+          <h2>Precisa identificar máquinas ou equipamentos?</h2>
+          <p>Descreva o projeto. A Undersoft analisará as informações e responderá através do contato informado.</p>
+          <div class="actions">
+            <a class="button secondary js-email" href="mailto:contato@undersoft.tec.br">Entrar em contato por email</a>
+          </div>
+          <a class="direct-email js-email" href="mailto:contato@undersoft.tec.br">contato@undersoft.tec.br</a>
+        </div>
+        <form class="lead-form" action="https://formsubmit.co/contato@undersoft.tec.br" method="POST">
+          <input type="hidden" name="_subject" value="Novo lead — Plaquetas industriais">
+          <input type="hidden" name="_template" value="table">
+          <input type="hidden" name="_captcha" value="false">
+          <input type="hidden" name="_next" value="SITE_CANONICAL_URL/obrigado.html">
+          <input class="honey" type="text" name="_honey" tabindex="-1" autocomplete="off">
+          <div class="form-field">
+            <label for="nome">Nome</label>
+            <input id="nome" name="nome" type="text" autocomplete="name" required placeholder="O seu nome">
+          </div>
+          <div class="form-field">
+            <label for="empresa">Empresa</label>
+            <input id="empresa" name="empresa" type="text" autocomplete="organization" required placeholder="Nome da empresa">
+          </div>
+          <div class="form-field">
+            <label for="email">Email</label>
+            <input id="email" name="email" type="email" autocomplete="email" required placeholder="nome@empresa.com.br">
+          </div>
+          <div class="form-field">
+            <label for="descricao">Descrição do projeto</label>
+            <textarea id="descricao" name="descricao" rows="5" required placeholder="Informe aplicação, quantidade, medidas e dados que pretende incluir."></textarea>
+          </div>
+          <label class="privacy-check"><input type="checkbox" name="privacidade_confirmada" value="Sim" required><span>Li a <a href="privacy.html">Política de Privacidade</a> e autorizo o contato sobre esta solicitação.</span></label>
+          <button class="button primary form-submit" type="submit">Enviar solicitação <span>↗</span></button>
+          <p class="form-note">Os dados serão utilizados exclusivamente para responder à sua solicitação.</p>
+        </form>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <div class="container footer-grid">
+      <a class="brand inverse" href="#inicio"><span>UNDER</span><b>soft</b><small>Soluções Empresariais</small></a>
+      <div><strong>Contato</strong><a class="js-email" href="mailto:contato@undersoft.tec.br">contato@undersoft.tec.br</a><span>Timóteo - MG</span></div>
+      <div><strong>Informações</strong><a href="#faq">Perguntas frequentes</a><a href="privacy.html">Política de privacidade</a><a class="js-marketplace" href="https://lista.mercadolivre.com.br/_CustId_1618539763?item_id=MLB4008885831&amp;category_id=MLB22714&amp;seller_id=1618539763&amp;client=recoview-selleritems&amp;recos_listing=true#origin=pdp&amp;component=seller&amp;typeSeller=classic">Mercado Livre</a></div>
+    </div>
+    <div class="container copyright"><span>© <span id="year"></span> Undersoft</span><span>Identificação industrial personalizada</span></div>
+  </footer>
+  <script>
+/* Substitua somente os valores abaixo antes da publicação comercial. */
+const SITE_CONFIG = {
+  marketplaceUrl: 'https://lista.mercadolivre.com.br/_CustId_1618539763?item_id=MLB4008885831&category_id=MLB22714&seller_id=1618539763&client=recoview-selleritems&recos_listing=true#origin=pdp&component=seller&typeSeller=classic',
+  gaMeasurementId: 'GA_MEASUREMENT_ID',
+  googleAdsId: 'GOOGLE_ADS_ID',
+  googleAdsConversionLabel: 'GOOGLE_ADS_CONVERSION_LABEL'
+};
+
+const search = new URLSearchParams(location.search);
+const campaignKeys = ['utm_source', 'utm_medium', 'utm_campaign', 'utm_term', 'utm_content', 'gclid'];
+
+campaignKeys.forEach((key) => {
+  const value = search.get(key);
+  if (value) sessionStorage.setItem(key, value);
+});
+
+const campaign = campaignKeys
+  .map((key) => [key, sessionStorage.getItem(key)])
+  .filter(([, value]) => value);
+
+function track(name, extra = {}) {
+  const payload = { event: name, ...extra };
+  if (typeof window.gtag === 'function') window.gtag('event', name, extra);
+  document.dispatchEvent(new CustomEvent('undersoft:conversion', { detail: payload }));
+  console.info('[conversion]', payload);
+}
+
+document.querySelectorAll('.js-contact').forEach((link) => {
+  link.addEventListener('click', () => track('contact_click', { contact_method: 'form' }));
+});
+
+document.querySelectorAll('.js-email').forEach((link) => {
+  link.addEventListener('click', () => track('email_click', { contact_method: 'email' }));
+});
+
+document.querySelectorAll('.js-marketplace').forEach((link) => {
+  link.href = SITE_CONFIG.marketplaceUrl;
+  link.target = '_blank';
+  link.rel = 'noopener';
+  link.addEventListener('click', () => track('mercadolivre_click'));
+});
+
+document.querySelector('.lead-form')?.addEventListener('submit', () => {
+  track('form_submit', { form_name: 'lead_contato' });
+});
+
+const leadForm = document.querySelector('.lead-form');
+campaign.forEach(([key, value]) => {
+  if (!leadForm) return;
+  const input = document.createElement('input');
+  input.type = 'hidden';
+  input.name = key;
+  input.value = value;
+  leadForm.appendChild(input);
+});
+
+const toggle = document.querySelector('.menu-toggle');
+const menu = document.querySelector('#menu');
+toggle?.addEventListener('click', () => {
+  const open = menu.classList.toggle('open');
+  toggle.setAttribute('aria-expanded', String(open));
+});
+menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () => {
+  menu.classList.remove('open');
+  toggle?.setAttribute('aria-expanded', 'false');
+}));
+
+document.querySelector('#year').textContent = new Date().getFullYear();
+
+/* Google Analytics / Ads:
+ * carregue gtag.js apenas depois de substituir os três IDs em SITE_CONFIG.
+ * Os eventos principais são contact_click, email_click, mercadolivre_click e form_submit.
+ */
+
+</script>
 </body>
 </html>
+
