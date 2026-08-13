@@ -1,7 +1,8 @@
-// Gerenciamento de consentimento de cookies (LGPD)
-// - Guarda a decisão (aceito/recusado) com timestamp em localStorage
-// - Validade de 30 dias: dentro desse prazo, não pergunta de novo
-// - GTM e GA4 só são carregados se houver aceite válido
+// Gerenciamento de aviso de cookies (LGPD)
+// - Aviso informativo, sem opção de recusa — apenas reconhecimento (OK)
+// - Guarda o reconhecimento com timestamp em localStorage
+// - Validade de 30 dias: dentro desse prazo, não mostra o aviso de novo
+// - GTM e GA4 só são carregados depois do clique em OK
 (function () {
   var STORAGE_KEY = 'us_cookie_consent';
   var VALID_DAYS = 30;
@@ -86,30 +87,20 @@
 
     if (consent && consent.status === 'accepted') {
       loadTrackers();
-      return; // já decidiu e ainda está dentro dos 30 dias — não mostra banner
-    }
-    if (consent && consent.status === 'rejected') {
-      return; // recusou dentro dos 30 dias — não mostra banner, não carrega nada
+      return; // já reconheceu o aviso e ainda está dentro dos 30 dias — não mostra de novo
     }
 
-    // sem decisão registrada, ou decisão expirada — mostra o banner de novo
+    // sem reconhecimento registrado, ou expirado — mostra o banner de novo
     var banner = document.getElementById('cookieBanner');
     if (!banner) return;
     banner.classList.add('active');
 
     var acceptBtn = document.getElementById('cookieAccept');
-    var rejectBtn = document.getElementById('cookieReject');
 
     if (acceptBtn) {
       acceptBtn.addEventListener('click', function () {
         saveConsent('accepted');
         loadTrackers();
-        banner.classList.remove('active');
-      });
-    }
-    if (rejectBtn) {
-      rejectBtn.addEventListener('click', function () {
-        saveConsent('rejected');
         banner.classList.remove('active');
       });
     }
