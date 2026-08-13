@@ -108,7 +108,7 @@ h3 { font-size: 1.35rem; }
 }
 .button:hover { transform: translateY(-2px); box-shadow: 0 10px 30px rgba(17, 20, 22, .14); }
 .button:focus-visible, a:focus-visible, summary:focus-visible, button:focus-visible { outline: 3px solid #ff9c7d; outline-offset: 3px; }
-.button.primary { color: #fff; background: var(--orange); border-color: var(--orange); }
+.button.primary { color: #fff; background: var(--orange-dark); border-color: var(--orange-dark); }
 .button.secondary { background: rgba(255, 255, 255, .72); }
 .text-link { display: inline-block; margin-top: 20px; font-size: .9rem; font-weight: 650; border-bottom: 1px solid; }
 
@@ -174,7 +174,7 @@ h3 { font-size: 1.35rem; }
 .steps span { color: var(--orange); font-size: .78rem; font-weight: 800; }
 .steps h3 { margin-top: 45px; }
 .steps p { color: var(--muted); font-size: .9rem; }
-.quantity { color: #fff; background: var(--orange); }
+.quantity { color: #fff; background: var(--orange-dark); }
 .quantity .kicker, .quantity .large { color: #fff; }
 .button.light { color: var(--ink); background: #fff; border-color: #fff; }
 .compact { grid-template-columns: 1.3fr .7fr; }
@@ -222,7 +222,7 @@ footer { padding: 70px 0 25px; color: #fff; background: #090b0c; }
 .footer-grid strong { margin-bottom: 8px; }
 .footer-grid a, .footer-grid span { color: #aeb3b5; font-size: .9rem; }
 .inverse small { color: var(--orange); }
-.copyright { display: flex; justify-content: space-between; margin-top: 60px; padding-top: 20px; color: #73797c; font-size: .78rem; border-top: 1px solid #282c2e; }
+.copyright { display: flex; justify-content: space-between; margin-top: 60px; padding-top: 20px; color: #868c8f; font-size: .78rem; border-top: 1px solid #282c2e; }
 
 @media (max-width: 900px) {
   .site-header nav { position: absolute; top: 76px; right: 0; left: 0; display: none; flex-direction: column; align-items: stretch; padding: 20px; background: #fff; border-bottom: 1px solid var(--line); }
