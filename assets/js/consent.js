@@ -2,13 +2,14 @@
 // - Aviso informativo, sem opção de recusa — apenas reconhecimento (OK)
 // - Guarda o reconhecimento com timestamp em localStorage
 // - Validade de 30 dias: dentro desse prazo, não mostra o aviso de novo
-// - GTM e GA4 só são carregados depois do clique em OK
+// - GTM, GA4 e a conversão do Google Ads só são carregados depois do clique em OK
 (function () {
   var STORAGE_KEY = 'us_cookie_consent';
   var VALID_DAYS = 30;
   var VALID_MS = VALID_DAYS * 24 * 60 * 60 * 1000;
   var GTM_ID = 'GTM-5KSPBLLB';
   var GA_ID = 'G-K4B9Y9WNT5';
+  var ADS_ID = 'AW-18388294473';
 
   function readConsent() {
     var raw;
@@ -41,7 +42,7 @@
     }
   }
 
-  function loadGA4() {
+  function loadGoogleTags() {
     var s = document.createElement('script');
     s.async = true;
     s.src = 'https://www.googletagmanager.com/gtag/js?id=' + GA_ID;
@@ -52,6 +53,7 @@
     window.gtag = gtag;
     gtag('js', new Date());
     gtag('config', GA_ID);
+    gtag('config', ADS_ID);
   }
 
   function loadGTM() {
@@ -78,7 +80,7 @@
   }
 
   function loadTrackers() {
-    loadGA4();
+    loadGoogleTags();
     loadGTM();
   }
 
