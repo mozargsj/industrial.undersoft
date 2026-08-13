@@ -213,39 +213,66 @@
           </div>
           <a class="direct-email js-email" href="mailto:contato@undersoft.tec.br">contato@undersoft.tec.br</a>
         </div>
-        <form class="lead-form" action="https://formspree.io/f/mgawylbn" method="POST">
-          <input type="hidden" name="_subject" value="Novo lead — Plaquetas industriais">
-          <input type="hidden" name="_template" value="table">
-          <input type="hidden" name="_captcha" value="false">
-          <input type="hidden" name="_next" value="SITE_CANONICAL_URL/obrigado.html">
-          <input class="honey" type="text" name="_honey" tabindex="-1" autocomplete="off">
+
+        <form id="leadForm" class="lead-form" action="https://formspree.io/f/mgawylbn" method="POST">
+
+          <input type="hidden" name="subject" value="[PLAQUETAS INDUSTRIAIS] Novo lead">
+          <input type="hidden" name="origem" value="Plaquetas Industriais">
+          <input type="hidden" name="landing_page" value="industrial.undersoft.tec.br">          
+
+          <input class="honey" type="text" name="_gotcha" tabindex="-1" autocomplete="off">
+
           <div class="form-field">
             <label for="nome">Nome</label>
             <input id="nome" name="nome" type="text" autocomplete="name" required placeholder="O seu nome">
           </div>
+
           <div class="form-field">
             <label for="empresa">Empresa</label>
-            <input id="empresa" name="empresa" type="text" autocomplete="organization" required placeholder="Nome da empresa">
+            <input id="empresa" name="empresa" type="text" autocomplete="organization" placeholder="Nome da empresa">
           </div>
+
           <div class="form-field">
             <label for="email">Email</label>
             <input id="email" name="email" type="email" autocomplete="email" required placeholder="nome@empresa.com.br">
           </div>
+
           <div class="form-field">
             <label for="descricao">Descrição do projeto</label>
-            <textarea id="descricao" name="descricao" rows="5" required placeholder="Informe aplicação, quantidade, medidas e dados que pretende incluir."></textarea>
+            <textarea id="descricao" name="descricao" rows="5"  required placeholder="Informe aplicação, quantidade, medidas e dados que pretende incluir."></textarea>
           </div>
-          <label class="privacy-check"><input type="checkbox" name="privacidade_confirmada" value="Sim" required>
-            <span>Li a 
-              <a href="privacy.html">Política de Privacidade</a> 
+
+          <label class="privacy-check">
+            <input type="checkbox" name="privacidade_confirmada" value="Sim"  required>
+
+            <span>
+              Li a
+              <a href="privacy.html">Política de Privacidade</a>
               e autorizo o contato sobre esta solicitação.
             </span>
           </label>
-          <button class="button primary form-submit" type="submit">Enviar solicitação 
+
+          <button id="leadSubmit" class="button primary form-submit" type="submit">
+            Enviar solicitação
             <span>↗</span>
           </button>
-          <p class="form-note">Os dados serão utilizados exclusivamente para responder à sua solicitação.</p>
+
+          <p class="form-note">
+            Os dados serão utilizados exclusivamente para responder à sua solicitação.
+          </p>
+
         </form>
+
+        <div id="successModal" class="success-modal" role="dialog" aria-modal="true" aria-labelledby="successModalTitle">
+          <div class="success-modal-card">
+            <div class="success-modal-icon">✓</div>
+            <h2 id="successModalTitle">Enviado com sucesso</h2>
+            <p>Recebemos a sua solicitação e entraremos em contacto consigo.</p>
+            <button id="successModalOk" class="button primary" type="button">OK</button>
+          </div>
+
+        </div>
+
       </div>
     </section>
   </main>

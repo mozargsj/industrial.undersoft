@@ -73,16 +73,6 @@ document.querySelector('.lead-form')?.addEventListener('submit', () => {
   track('form_submit', { form_name: 'lead_contato' });
 });
 
-const leadForm = document.querySelector('.lead-form');
-campaign.forEach(([key, value]) => {
-  if (!leadForm) return;
-  const input = document.createElement('input');
-  input.type = 'hidden';
-  input.name = key;
-  input.value = value;
-  leadForm.appendChild(input);
-});
-
 const toggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('#menu');
 toggle?.addEventListener('click', () => {
@@ -95,6 +85,62 @@ menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () 
 }));
 
 document.querySelector('#year').textContent = new Date().getFullYear();
+
+
+const leadForm = document.getElementById("leadForm");
+const leadSubmit = document.getElementById("leadSubmit");
+const successModal = document.getElementById("successModal");
+const successModalOk = document.getElementById("successModalOk");
+
+const originalButtonContent = leadSubmit.innerHTML;
+
+leadForm.addEventListener("submit", async function (event) {
+  event.preventDefault();
+
+  leadSubmit.disabled = true;
+  leadSubmit.innerHTML = "A enviar...";
+
+  try {
+    const formData = new FormData(leadForm);
+
+    const response = await fetch(leadForm.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        "Accept": "application/json"
+      }
+    });
+
+    if (!response.ok) {
+      throw new Error("Falha no envio");
+    }
+
+    leadForm.reset();
+
+    successModal.classList.add("active");
+    document.body.classList.add("modal-open");
+
+    successModalOk.focus();
+
+  } catch (error) {
+    console.error("Erro ao enviar formulário:", error);
+
+    alert(
+      "Não foi possível enviar a solicitação. " +
+      "Por favor, tente novamente."
+    );
+
+  } finally {
+    leadSubmit.disabled = false;
+    leadSubmit.innerHTML = originalButtonContent;
+  }
+});
+
+successModalOk.addEventListener("click", function () {
+  successModal.classList.remove("active");
+  document.body.classList.remove("modal-open");
+});
+
 
 /* Google Analytics / Ads:
  * carregue gtag.js apenas depois de substituir os três IDs em SITE_CONFIG.
