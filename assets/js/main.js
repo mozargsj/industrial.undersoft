@@ -69,10 +69,6 @@ document.querySelectorAll('.js-marketplace').forEach((link) => {
   link.addEventListener('click', () => track('mercadolivre_click'));
 });
 
-document.querySelector('.lead-form')?.addEventListener('submit', () => {
-  track('form_submit', { form_name: 'lead_contato' });
-});
-
 const toggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('#menu');
 toggle?.addEventListener('click', () => {
