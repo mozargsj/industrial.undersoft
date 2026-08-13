@@ -1,21 +1,8 @@
 <!doctype html>
 <html lang="pt-BR">
 <head>
-  <!-- Google tag (gtag.js) -->
-  <script async src="https://www.googletagmanager.com/gtag/js?id=G-K4B9Y9WNT5"></script>
-  <script>
-    window.dataLayer = window.dataLayer || [];
-    function gtag(){dataLayer.push(arguments);}
-    gtag('js', new Date());
-    gtag('config', 'G-K4B9Y9WNT5');
-  </script>
-  <!-- Google Tag Manager -->
-  <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
-  new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
-  j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
-  'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
-  })(window,document,'script','dataLayer','GTM-5KSPBLLB');</script>
-  <!-- End Google Tag Manager -->
+  <!-- Analytics/GTM carregados condicionalmente após consentimento — ver assets/js/consent.js -->
+  <script src="assets/js/consent.js" defer></script>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <link rel="icon" type="image/png" href="assets/img/favicon.png">
@@ -42,10 +29,6 @@
   </script>
 </head>
 <body>
-  <!-- Google Tag Manager (noscript) -->
-  <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5KSPBLLB"
-  height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
-  <!-- End Google Tag Manager (noscript) -->
   <a class="skip-link" href="#conteudo">Ir para o conteúdo</a>
   <header class="site-header">
     <div class="container nav-wrap">
@@ -326,6 +309,17 @@
 
   <img class="lightbox-image" alt="">
 </dialog>
+
+  <div id="cookieBanner" class="cookie-banner" role="dialog" aria-live="polite" aria-label="Aviso de cookies">
+    <p class="cookie-banner-text">
+      Usamos cookies para medir audiência e melhorar o site. Ao aceitar, você concorda com nossa
+      <a href="pages/privacy.html">Política de Privacidade</a>.
+    </p>
+    <div class="cookie-banner-actions">
+      <button id="cookieReject" type="button" class="button secondary">Recusar</button>
+      <button id="cookieAccept" type="button" class="button primary">Aceitar</button>
+    </div>
+  </div>
 
   <script src="assets/js/main.js" defer></script>
 </body>
