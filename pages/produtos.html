@@ -57,7 +57,9 @@
     <section class="section product-list-section" id="produtos">
       <div class="container">
         <div class="product-layout">
-          <aside class="filters" aria-label="Filtrar produtos">
+          <div class="filters-backdrop" id="filtersBackdrop"></div>
+
+          <aside class="filters" id="filtersPanel" aria-label="Filtrar produtos">
             <div class="filters-head">
               <h2>Filtrar</h2>
               <button class="filter-clear" id="filterClear" type="button">Limpar filtros</button>
@@ -83,11 +85,16 @@
               <label><input type="checkbox" value="inox-430"> Aço inox AISI 430</label>
               <label><input type="checkbox" value="inox-escovado"> Aço inox escovado 0,8 mm</label>
             </fieldset>
+
+            <div class="filters-footer">
+              <button class="button primary filters-apply" id="filtersApply" type="button">Aplicar filtros</button>
+            </div>
           </aside>
 
           <div class="product-results">
             <div class="product-results-head">
               <span id="resultCount">4 produtos</span>
+              <button class="button secondary filters-toggle" id="filtersToggle" type="button" aria-expanded="false" aria-controls="filtersPanel">Filtrar</button>
             </div>
 
             <ul class="product-list" id="productList">

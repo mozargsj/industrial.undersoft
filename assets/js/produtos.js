@@ -40,3 +40,31 @@ clearButton?.addEventListener('click', () => {
   document.querySelectorAll('.filter-group input:checked').forEach((input) => { input.checked = false; });
   applyFilters();
 });
+
+// Painel de filtros suspenso (mobile): abre como gaveta, "Aplicar filtros" volta para a grade
+const filtersToggle = document.querySelector('#filtersToggle');
+const filtersPanel = document.querySelector('#filtersPanel');
+const filtersApply = document.querySelector('#filtersApply');
+const filtersBackdrop = document.querySelector('#filtersBackdrop');
+
+function openFilters() {
+  filtersPanel?.classList.add('open');
+  filtersBackdrop?.classList.add('active');
+  filtersToggle?.setAttribute('aria-expanded', 'true');
+  document.body.classList.add('modal-open');
+}
+
+function closeFilters() {
+  filtersPanel?.classList.remove('open');
+  filtersBackdrop?.classList.remove('active');
+  filtersToggle?.setAttribute('aria-expanded', 'false');
+  document.body.classList.remove('modal-open');
+  filtersToggle?.focus();
+}
+
+filtersToggle?.addEventListener('click', openFilters);
+filtersApply?.addEventListener('click', closeFilters);
+filtersBackdrop?.addEventListener('click', closeFilters);
+document.addEventListener('keydown', (event) => {
+  if (event.key === 'Escape' && filtersPanel?.classList.contains('open')) closeFilters();
+});
