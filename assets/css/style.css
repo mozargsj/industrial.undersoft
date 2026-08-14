@@ -445,7 +445,7 @@ footer { padding: 70px 0 25px; color: #fff; background: #090b0c; }
 @media (max-width: 900px) {
   .product-layout { grid-template-columns: 1fr; }
 
-  .filters-toggle { display: inline-flex; min-height: auto; padding: 9px 16px; font-size: .82rem; white-space: nowrap; }
+  .filters-toggle { display: inline-flex; min-height: 44px; padding: 9px 16px; font-size: .82rem; white-space: nowrap; }
 
   .filters {
     position: fixed;
