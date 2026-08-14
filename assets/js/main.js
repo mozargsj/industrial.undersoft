@@ -75,6 +75,10 @@ document.querySelectorAll('.js-marketplace').forEach((link) => {
   link.addEventListener('click', () => track('mercadolivre_click'));
 });
 
+document.querySelectorAll('.js-marketplace-hero').forEach((link) => {
+  link.addEventListener('click', () => track('mercadolivre_click'));
+});
+
 const toggle = document.querySelector('.menu-toggle');
 const menu = document.querySelector('#menu');
 toggle?.addEventListener('click', () => {
