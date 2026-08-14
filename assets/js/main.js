@@ -86,6 +86,27 @@ menu?.querySelectorAll('a').forEach((link) => link.addEventListener('click', () 
   toggle?.setAttribute('aria-expanded', 'false');
 }));
 
+/* Destaca no menu a seção atualmente visível (fundo escuro, texto claro) */
+const sectionLinks = Array.from(menu?.querySelectorAll('a[href^="#"]:not(.nav-cta)') || []);
+const spySections = sectionLinks
+  .map((link) => document.querySelector(link.getAttribute('href')))
+  .filter(Boolean);
+
+if (spySections.length) {
+  const setActiveSectionLink = (id) => {
+    sectionLinks.forEach((link) => link.classList.toggle('active', link.getAttribute('href') === `#${id}`));
+  };
+
+  const sectionObserver = new IntersectionObserver((entries) => {
+    const visible = entries
+      .filter((entry) => entry.isIntersecting)
+      .sort((a, b) => b.intersectionRatio - a.intersectionRatio)[0];
+    if (visible) setActiveSectionLink(visible.target.id);
+  }, { rootMargin: '-40% 0px -55% 0px', threshold: [0, .25, .5, .75, 1] });
+
+  spySections.forEach((section) => sectionObserver.observe(section));
+}
+
 document.querySelector('#year').textContent = new Date().getFullYear();
 
 
