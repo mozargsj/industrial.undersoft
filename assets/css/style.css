@@ -583,5 +583,6 @@ body.modal-open {
 
 @media (max-width: 600px) {
   .cookie-banner { left: 12px; right: 12px; flex-direction: column; align-items: stretch; padding: 20px; }
+  .cookie-banner-text { flex: none; }
   .cookie-banner-actions .button { flex: 1; }
 }
