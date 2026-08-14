@@ -27,12 +27,11 @@ lightbox?.addEventListener('close', () => {
   lightboxImage.alt = '';
 });
 
-/* Substitua somente os valores abaixo antes da publicação comercial. */
+/* Substitua os valores de Ads abaixo se optar por tag de conversão separada (ver assets/js/consent.js para GA4/GTM). */
 const SITE_CONFIG = {
   marketplaceUrl: 'https://lista.mercadolivre.com.br/_CustId_1618539763?item_id=MLB4008885831&category_id=MLB22714&seller_id=1618539763&client=recoview-selleritems&recos_listing=true#origin=pdp&component=seller&typeSeller=classic',
-  gaMeasurementId: 'GA_MEASUREMENT_ID',
-  googleAdsId: 'GOOGLE_ADS_ID',
-  googleAdsConversionLabel: 'GOOGLE_ADS_CONVERSION_LABEL'
+  googleAdsId: 'AW-18388294473',
+  googleAdsConversionLabel: 'EtcNCPCWkeEcEMm2nMBE'
 };
 
 const search = new URLSearchParams(location.search);
@@ -49,7 +48,14 @@ const campaign = campaignKeys
 
 function track(name, extra = {}) {
   const payload = { event: name, ...extra };
-  if (typeof window.gtag === 'function') window.gtag('event', name, extra);
+  if (typeof window.gtag === 'function') {
+    window.gtag('event', name, extra);
+    if (name === 'form_submit' && SITE_CONFIG.googleAdsId && SITE_CONFIG.googleAdsConversionLabel) {
+      window.gtag('event', 'conversion', {
+        send_to: `${SITE_CONFIG.googleAdsId}/${SITE_CONFIG.googleAdsConversionLabel}`
+      });
+    }
+  }
   document.dispatchEvent(new CustomEvent('undersoft:conversion', { detail: payload }));
   console.info('[conversion]', payload);
 }
@@ -113,6 +119,11 @@ leadForm.addEventListener("submit", async function (event) {
 
     leadForm.reset();
 
+    track('form_submit', {
+      form_id: 'leadForm',
+      ...Object.fromEntries(campaign)
+    });
+
     successModal.classList.add("active");
     document.body.classList.add("modal-open");
 
@@ -138,7 +149,9 @@ successModalOk.addEventListener("click", function () {
 });
 
 
-/* Google Analytics / Ads:
- * carregue gtag.js apenas depois de substituir os três IDs em SITE_CONFIG.
- * Os eventos principais são contact_click, email_click, mercadolivre_click e form_submit.
+/* Google Ads:
+ * conversão "Enviar formulário de lead" configurada (AW-18388294473).
+ * Disparada em track('form_submit'), junto com o evento genérico do GA4.
+ * GA4/GTM/Ads Tag são carregados por assets/js/consent.js, após consentimento de cookies.
+ * Eventos disparados: contact_click, email_click, mercadolivre_click, form_submit.
  */
